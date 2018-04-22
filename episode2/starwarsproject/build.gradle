@@ -1,4 +1,0 @@
-plugins {
-  id "net.saliman.properties" version "1.4.6"
-  id "com.marklogic.ml-gradle" version "3.3.0"
-}

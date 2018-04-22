@@ -1,0 +1,17 @@
+import
+-mode
+local
+-host
+localhost
+-port
+8090
+-username
+admin
+-password
+admin
+-input_file_path
+./{characters,images}
+-output_uri_replace
+".*images,'/image',.*characters,'/character'"
+-output_permissions
+rest-reader,read,rest-writer,update

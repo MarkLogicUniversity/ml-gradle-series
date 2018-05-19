@@ -28,7 +28,7 @@ To follow along, do the following.
 	* `part2-scaffold`
 	* `part3-customized`
 	* `starwarsproject` <-- created when you copied the folder from the `part1-initial` folder in **Step 1**.	
-3. Copy the `build.gradle` file from the `part1-initial` folder to your new `starwarsproject` folder.  
+3. Examine the contents of the `starwarsproject` folder and verify there is a `build.gradle` file. Look at the file in a text editor, if you'd like. The contents of the `build.gradle` file pulls in the `ml-gradle` Gradle plug-in.  
 
 4. In command prompt (Windows) or terminal session prompt (CentOS/RedHat or MacOS), change to your new `starwarsproject` folder.
 	* Type `cd <path to the episode2 files >/episode2/starwarsproject` then press ENTER.

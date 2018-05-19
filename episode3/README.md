@@ -42,18 +42,18 @@ To follow along, do the following.
 6. In a web browser, go to <http://localhost:8090/index.xqy> to see the project web page. Edit the port number (:8090) if your value of `mlRestPort` in the `gradle.properties` file is different.
 	* No data will display in the charts since we have not yet loaded content to the content database.
 
-7. Do **not** run the `mlUndeploy	` task. We will load content in the next section then refresh our web page to display the data in our Google Charts. 
+7. Do **not** run the `mlUndeploy` task. We will load content in the next section then refresh our web page to display the data in our Google Charts. 
 
 ### `part2-mlcp` instructions
 
-1. Copy the folder called `starwarsproject` in the `part2-mlcp` folder to the same level as the `episode3` folder. Replace the existing `starwarsproject` folder.
+1. Copy the folder called `starwarsproject` from the `part2-mlcp` folder to the same level as the `episode3` folder. Replace the existing `starwarsproject` folder.
 
 2. The `episode3` folder should still have the following folders:  
 	* `part1-app-deploy`
 	* `part2-mlcp`
-	* `starwarsproject` <-- created when you copied the folder from the `part1-mlcp` folder in **Step 1**.	
+	* `starwarsproject` <-- created when you copied the folder from the `part2-mlcp` folder in **Step 1**.	
 
-3. In command prompt (Windows) or terminal session prompt (CentOS/RedHat or MacOS), change to your new `starwarsproject` folder.
+3. In a command prompt (Windows) or terminal session prompt (CentOS/RedHat or MacOS), change to your new `starwarsproject` folder.
 	* Type `cd <path to the episode3 files >/episode3/starwarsproject` then press ENTER.
 
 4. View the Gradle task that will load our content.

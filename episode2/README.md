@@ -28,13 +28,25 @@ To follow along, do the following.
 	* `part2-scaffold`
 	* `part3-customized`
 	* `starwarsproject` <-- created when you copied the folder from the `part1-initial` folder in **Step 1**.	
-3. Copy the `build.gradle` file from the `part1-initial` folder to your new `starwarsproject` folder.  
+3. Examine the contents of the `starwarsproject` folder and verify there is a `build.gradle` file. Look at the file in a text editor, if you'd like. The contents of the `build.gradle` file pulls in the `ml-gradle` Gradle plug-in.  
 
 4. In command prompt (Windows) or terminal session prompt (CentOS/RedHat or MacOS), change to your new `starwarsproject` folder.
 	* Type `cd <path to the episode2 files >/episode2/starwarsproject` then press ENTER.
 
 5. Run the **ml-gradle** `mlDeploy` task.
 	* Type `gradle mlDeploy` then press ENTER.
+	* Since there is no `gradle.properties` file nor configuration directory structure, `ml-gradle` deploys a default REST application server, content database and module database.
+
+6. Examine your deployed configurations.
+	* Visit the Admin Interface in your browser to verify the changes that were deployed. <http://localhost:8001>
+	* Note a default REST application server called `my-app` was created.
+	* Note 2 databases, `my-app-content` and `my-app-modules`, were created.
+	* Note forests for the above databases were also created.
+
+7. Undeploy the configuraitons.  
+	* Type `gradle mlUndeploy -Pconfirm=true` then press ENTER.
+	* Your deployed configurations have been removed from your MarkLogic Server. 
+	* You can go to the Admin Interface in your browser to verify, <http://localhost:8001>. If your browser is already open, refresh the page to re-read the current configuration information from your local MarkLogic server.
 
 6. The **ml-gradle** dependencies are downloaded and you can proceed to the **part2-scaffold**. 
 
@@ -46,6 +58,8 @@ To follow along, do the following.
 	* Type `gradle mlNewProject` then press ENTER.
 	* For the application name, type `starwars` then press ENTER.
 	* Press ENTER to accept `localhost` as the MarkLogic server to deploy.
+	* Enter your MarkLogic Administrator username.
+	* Enter the password for your MarkLogic Administrator.
 	* Enter `8090` as the REST api port number then press ENTER. 
 	* Leave the Test REST api port number blank and just press ENTER.
 	* Press ENTER to accept the default value of **Y** to create MarkLogic database configurations.

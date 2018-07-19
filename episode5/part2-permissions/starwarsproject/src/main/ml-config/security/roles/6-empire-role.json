@@ -1,0 +1,5 @@
+{
+  "role-name" : "empire-reader",
+  "description" : "Can view documents empire alliance documents only.",
+  "role" : [ "rest-reader", "starwars-reader" ]
+}

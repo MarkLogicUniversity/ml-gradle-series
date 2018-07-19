@@ -1,0 +1,10 @@
+{
+  "role-name" : "starwars-reader",
+  "description" : "Can view documents, but not edit",
+  "permission": [
+		{
+			"role-name": "starwars-reader",
+			"capability": "read"
+		}
+	]
+}

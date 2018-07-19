@@ -23,11 +23,26 @@ The **ml-gradle** video tutorials are separated into episodes. Here is an overvi
 	Introduces you to the **ml-gradle** plug-in. There are no hands-on activities for this episode.
 	
 * **Episode 2 - Scaffolding New Projects with ml-gradle.**  
-	Creating a new project configuration with the **ml-gradle** plug-in including configuration resources for an Application Server, Content and Module Databases, Security Roles and Users. Learn how to deploy your new configurations to a MarkLogic server and also how to undeploy them. Customize resource configurations to include new indexes for our sample project application.
+	Creating a new project configuration with the **ml-gradle** plug-in including configuration resources for an Application Server, Content and Module Databases, Security Roles and Users. Learn how to deploy your new configurations to a MarkLogic server and also how to undeploy them.
 
-	See the README.md file in the `episode2` folder for information specific to hands-on activies for this episode.
+	See the README.md file in the Episode 2 folder for information specific to hands-on activies for this episode.
  
 * **Episode 3 - Customizing Deployments with ml-gradle.**  
-	Customize our previous configurations to deploy application code, a REST api extension and also deploy content to our new database.
+	Customize our previous configurations to add indexes, deploy a REST extension and also deploy content to our new database.
 
-	See the README.md file in the `episode3` folder for information specific to hands-on activies for this episode.
+	See the README.md file in the Episode 3 folder for information specific to hands-on activies for this episode.
+
+* **Episode 4 - Securing Content with ml-gradle, Roles and Permissions.**  
+	Create a security model for our content and deploy content that has been secured by roles.
+
+	See the README.md file in the Episode 4 folder for information specific to hands-on activies for this episode.
+
+* **Episode 5 - Securing Content with ml-gradle, Security by Roles.**  
+	Continue our security deployment model and secure content according to roles assigned based on document content.
+
+	See the README.md file in the Episode 5 folder for information specific to hands-on activies for this episode.
+
+* **Episode 6 - Securing Content with ml-gradle, Element-Level Security.**  
+	Deploy a finer granularity of content protection with element-level security.
+
+	See the README.md file in the Episode 6 folder for information specific to hands-on activies for this episode.

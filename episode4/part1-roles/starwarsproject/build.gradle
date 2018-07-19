@@ -1,0 +1,31 @@
+plugins {
+  id "net.saliman.properties" version "1.4.6"
+  id "com.marklogic.ml-gradle" version "3.7.1"
+}
+
+repositories {
+  jcenter()
+  maven { url "https://developer.marklogic.com/maven2/" }
+}
+
+configurations {
+  mlcp
+}
+
+dependencies {
+  mlcp "com.marklogic:mlcp:9.0.4"
+  mlcp files("lib")
+}
+
+task deployContent(type: com.marklogic.gradle.task.MlcpTask) {
+  classpath = configurations.mlcp
+  command = "IMPORT"
+  username = mlManageUsername
+  password = mlManagePassword
+  port = Integer.parseInt(mlRestPort)
+  database = "starwars-content"
+  input_file_path = "../../star-wars-content/{characters,images}"
+  output_uri_replace = ".*characters,'/character',.*images,'/image'"
+  output_permissions = "rest-reader,read,rest-writer,update"
+  output_collections = "starwars-collection"
+}

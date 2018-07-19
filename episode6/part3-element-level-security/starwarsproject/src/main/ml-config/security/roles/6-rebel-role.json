@@ -1,0 +1,5 @@
+{
+  "role-name" : "rebel-reader",
+  "description" : "Can view rebel alliance documents only",
+  "role" : [ "rest-reader", "starwars-reader" ]
+}

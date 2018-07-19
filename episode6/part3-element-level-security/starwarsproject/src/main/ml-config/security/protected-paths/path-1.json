@@ -1,0 +1,8 @@
+{
+	"path-expression":"/bio",
+	"path-namespace":[],
+	"permission": [
+		{"role-name":"rebel-admin", "capability":"read"},
+		{"role-name":"empire-admin", "capability":"read"}
+	]
+}

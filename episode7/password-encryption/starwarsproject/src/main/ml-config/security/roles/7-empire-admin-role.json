@@ -1,0 +1,5 @@
+{
+  "role-name" : "empire-admin",
+  "description" : "Can read and write all parts of empire documents.",
+  "role" : [ "starwars-admin", "empire-reader", "rebel-reader" ]
+}

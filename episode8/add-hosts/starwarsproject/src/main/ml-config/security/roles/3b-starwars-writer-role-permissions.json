@@ -1,0 +1,10 @@
+{
+  "role-name" : "starwars-writer",
+  "description" : "Can read and write documents",
+  "permission": [
+		{
+			"role-name": "starwars-writer",
+			"capability": "update"
+		}
+	]
+}

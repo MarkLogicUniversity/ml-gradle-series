@@ -1,0 +1,60 @@
+plugins {
+  id "net.saliman.properties" version "1.4.6"
+  id "com.marklogic.ml-gradle" version "3.9.0"
+}
+
+repositories {
+  jcenter()
+  maven { url "http://developer.marklogic.com/maven2/" }
+}
+
+configurations {
+  mlcp
+}
+
+dependencies {
+  mlcp "com.marklogic:mlcp:9.0.4"
+  mlcp files("/home/gradle/project")
+}
+
+// In the extra properties extension, retrieve passwords
+//  previously stored in environment variables. Once retrieved,
+//  the REST connections to MarkLogic must be refreshed to
+//  use the passwords.
+
+ext {
+  // Configure password properties based on environment variables
+  mlPassword = System.getenv("ADMINPWD")
+  mlManagePassword = System.getenv("MANAGEPWD")
+  mlSecurityPassword = System.getenv("SECUREPWD")
+  mlRestAdminPassword = System.getenv("RESTPWD")
+  mlMlcpPassword = System.getenv("MLCPPWD")
+  appServicesPassword = mlPassword
+
+  mlManageConfig.password = mlManagePassword
+  mlManageConfig.securityPassword = mlSecurityPassword // only needed if setting mlSecurityUsername
+  mlAdminConfig.password = mlPassword
+  mlAppConfig.restAdminPassword = mlRestAdminPassword
+  mlAppConfig.appServicesPassword = appServicesPassword
+
+  // Re-initialize the connections to the Admin and Manage servers
+  mlManageClient.manageConfig = mlManageConfig
+  mlAdminManager.adminConfig = mlAdminConfig
+}
+
+// deploy content to the star-wars-content database using
+//  MarkLogic Content Pump as a Gradle task.
+task deployContent(type: com.marklogic.gradle.task.MlcpTask) {
+  classpath = configurations.mlcp
+  command = "IMPORT"
+  username = mlMlcpUsername
+  password = mlMlcpPassword
+  port = Integer.parseInt(mlRestPort)
+  database = "starwars-content"
+  input_file_path = "./star-wars-content/{characters,images}"
+  output_uri_replace = ".*characters,'/character',.*images,'/image'"
+  output_permissions = "rest-reader,read,rest-writer,update"
+  output_collections = "starwars-collection"
+  transform_module = "/transforms/setPermissions.sjs"
+  transform_function = "setPermissions"
+}

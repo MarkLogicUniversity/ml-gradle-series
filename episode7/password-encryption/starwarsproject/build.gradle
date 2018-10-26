@@ -1,0 +1,74 @@
+plugins {
+  id "net.saliman.properties" version "1.4.6"
+  id "com.marklogic.ml-gradle" version "3.9.0"
+  id "nu.studer.credentials" version "1.0.4"
+}
+
+repositories {
+  jcenter()
+  maven { url "https://developer.marklogic.com/maven2/" }
+}
+
+configurations {
+  mlcp
+}
+
+dependencies {
+  mlcp "com.marklogic:mlcp:9.0.4"
+  mlcp files("lib")
+}
+
+// In the extra properties extension, retrieve passwords
+//  previously encrypted and stored locally. Once retrieved,
+//  the REST connections to MarkLogic must be refreshed to
+//  use the passwords.
+
+// This Gradle credentials plugin,
+//  <https://github.com/etiennestuder/gradle-credentials-plugin>,
+//  was used to store passwords encrypted rather than in the
+//  gradle.properties file in clear text.
+//
+// Example of previous calls to the credentials plugin to store
+//  the passwords:
+//
+// gradle addCredentials --key managePassword --value somePassword
+// gradle addCredentials --key securityPassword --value somePassword
+// gradle addCredentials --key adminPassword --value somePassword
+// gradle addCredentials --key restPassword --value somePassword
+// gradle addCredentials --key appServicesPassword --value somePassword
+
+ext {
+  // Configure properties based on encrypted credentials
+  mlManageConfig.password = credentials.managePassword
+  mlManageConfig.securityPassword = credentials.securityPassword // only needed if setting mlSecurityUsername
+  mlAdminConfig.password = credentials.adminPassword
+  mlAppConfig.restAdminPassword = credentials.restPassword
+  mlAppConfig.appServicesPassword = credentials.appServicesPassword
+
+  // password for the "starwars-admin" user that will be used to load
+  //  the example content to the database.
+  mlMlcpPassword = credentials.mlcpPassword
+
+  // Re-initialize the connections to the Admin and Manage servers
+  mlManageClient.manageConfig = mlManageConfig
+  mlAdminManager.adminConfig = mlAdminConfig
+
+  // Set the mlManagePassword Property so the deployContent task
+  //  can load content with correct credentials
+  mlManagePassword = mlManageConfig.password
+}
+
+task deployContent(type: com.marklogic.gradle.task.MlcpTask) {
+  classpath = configurations.mlcp
+  command = "IMPORT"
+  username = mlMlcpUsername
+  password = mlMlcpPassword
+  port = Integer.parseInt(mlRestPort)
+  database = "starwars-content"
+  input_file_path = "../../star-wars-content/{characters,images}"
+  output_uri_replace = ".*characters,'/character',.*images,'/image'"
+  output_permissions = "rest-reader,read,rest-writer,update"
+  output_collections = "starwars-collection"
+  transform_module = "/transforms/setPermissions.sjs"
+  transform_function = "setPermissions"
+}

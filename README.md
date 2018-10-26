@@ -45,4 +45,10 @@ The **ml-gradle** video tutorials are separated into episodes. Here is an overvi
 * **Episode 6 - Securing Content with ml-gradle, Element-Level Security.**  
 	Deploy a finer granularity of content protection with element-level security.
 
-	See the README.md file in the Episode 6 folder for information specific to hands-on activies for this episode.
+* **Episode 7 - Protecting Passwords.**  
+	Examine an approach to protecting passwords in ml-gradle builds.
+
+* **Episode 8 - Adding Hosts to Clusters.**  
+	Add a new MarkLogic host to a cluster. Then, deploy our sample application to the new cluster of MarkLogic servers, using one server for the application server and the other two MarkLogic servers for forests.
+
+	See the README.md file in each episode folder for information specific to hands-on activies for that episode.

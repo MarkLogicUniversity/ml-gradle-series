@@ -1,0 +1,12 @@
+{
+  "server-name" : "8095-starwars-HTTP",
+  "group-name" : "Default",
+  "server-type" : "http",
+  "enabled" : true,
+  "root" : "/",
+  "port" : 8095,
+  "authentication" : "application-level",
+  "default-user" : "starwars-reader",
+  "content-database" : "%%DATABASE%%",
+  "modules-database" : "%%MODULES_DATABASE%%"
+}

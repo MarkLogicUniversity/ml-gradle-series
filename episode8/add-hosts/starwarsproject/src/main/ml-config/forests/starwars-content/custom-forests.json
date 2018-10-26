@@ -1,0 +1,14 @@
+[
+	{
+		"forest-name": "starwars-content-0001",
+		"host": "mldnode1.local",
+		"enabled": true,
+		"database": "%%DATABASE%%"
+	},
+	{
+		"forest-name": "starwars-content-0002",
+		"host": "mldnode2.local",
+		"enabled": true,
+		"database": "%%DATABASE%%"
+	}
+]

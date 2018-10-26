@@ -1,0 +1,75 @@
+version: "3.6"
+
+services:
+  mlenode:
+    build: ./src/main/docker/marklogic
+    image: marklogic:LATEST
+# ensure marklogic hostnames have both domain and hostnames
+    hostname: mlenode
+    domainname: local
+    volumes:
+      - type: volume
+        source: marklogic_data
+        target: /data
+    ports:
+      - "8000-8010:8000-8010/tcp"
+      - "9010:9010/tcp"
+# ensure the marklogic containers can communicate with each other via the hostnames
+    networks:
+      default:
+        aliases:
+          - mlenode.local
+
+  mldnode1:
+    image: marklogic:LATEST
+# ensure marklogic hostnames have both domain and hostnames
+    hostname: mldnode1
+    domainname: local
+    volumes:
+      - type: volume
+        source: marklogic_data
+        target: /data
+# ensure the marklogic containers can communicate with each other via the hostnames
+    networks:
+      default:
+        aliases:
+          - mldnode1.local
+
+  mldnode2:
+    image: marklogic:LATEST
+# ensure marklogic hostnames have both domain and hostnames
+    hostname: mldnode2
+    domainname: local
+    volumes:
+      - type: volume
+        source: marklogic_data
+        target: /data
+# ensure the marklogic containers can communicate with each other via the hostnames
+    networks:
+      default:
+        aliases:
+          - mldnode2.local
+
+# this is our container inside the private docker network with which to deploy
+# our marklogic deployment.
+  gradle:
+    image: gradle:alpine
+# access these environment variables containing our password values
+    environment:
+      - ADMINPWD
+      - MANAGEPWD
+      - SECUREPWD
+      - RESTPWD
+      - MLCPPWD
+# bind a directory in the container to the current directory. the gradle build
+# scripts and files will not have to be copied into the container but can reside
+# on our host computer. 
+    volumes:
+      - type: bind
+        source: .
+        target: /home/gradle/project
+    working_dir: /home/gradle/project
+    command: "/bin/sh /home/gradle/project/deploy_cluster.sh mlenode.local mldnode1.local mldnode2.local"
+
+volumes:
+  marklogic_data:

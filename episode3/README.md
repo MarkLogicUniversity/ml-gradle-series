@@ -1,5 +1,8 @@
 # ML-GRADLE Hands-On Exercises 
+
 ## Episode 3 - Customizing Deployments with ml-gradle
+
+Episode 3 is part of the [**ml-gradle** series] (http://mlu.marklogic.com/ondemand/index.xqy?q=Series%3A%22ml-gradle%22). Visit [MarkLogic University On Demand] (http://mlu.marklogic.com/ondemand) for a variety of video topics.
 
 This episode investigates extending configurations created in **Episode 2**. We will extend our configurations to include application code for our Star Wars web page project. The web page will also extract data from our Star Wars content database then display the data in Google Charts. We will also load content to our Star Wars database by using an **ml-gradle** MarkLogic Content Pump (MLCP) task.
 

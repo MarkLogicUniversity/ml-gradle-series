@@ -1,5 +1,9 @@
+
 # ML-GRADLE Securing Content with ml-gradle, Hands-On Exercises 
+
 ## Episode 4 - Roles and Permissions
+
+Episode 4 is part of the [**ml-gradle** series] (http://mlu.marklogic.com/ondemand/index.xqy?q=Series%3A%22ml-gradle%22). Visit [MarkLogic University On Demand] (http://mlu.marklogic.com/ondemand) for a variety of video topics.
 
 This episode investigates extending configurations created in **Episode 3**. We will extend our configurations to add log in and log out functions to the application code for our Star Wars web page project. The deployment utilizes MarkLogic security, roles and permissions.
 

@@ -1,6 +1,8 @@
 # ML-GRADLE Hands-On Exercises 
+
 ## Overview:
-In this series, we'll examine the **ml-gradle** plug-in for Gradle. The plug-in adds custom Gradle tasks and properties to deploy a wide-range of configurations to MarkLogic servers.
+
+In the [**ml-gradle** series] (http://mlu.marklogic.com/ondemand/index.xqy?q=Series%3A%22ml-gradle%22), we'll examine the **ml-gradle** plug-in for Gradle. The plug-in adds custom Gradle tasks and properties to deploy a wide-range of configurations to MarkLogic servers.
 
 Here is a short list of example resources that can be deployed with **ml-gradle**.
 
@@ -13,7 +15,7 @@ Here is a short list of example resources that can be deployed with **ml-gradle*
 
 and much more.
 
-Visit <https://github.com/marklogic-community/ml-gradle> and don't forget to visit the Wiki.
+Visit <https://github.com/marklogic-community/ml-gradle> and don't forget to visit the Wiki. See [MarkLogic University On Demand] (http://mlu.marklogic.com/ondemand) for a variety of video topics.
 
 ## Table of Contents
 

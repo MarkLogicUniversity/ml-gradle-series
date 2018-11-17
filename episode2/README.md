@@ -1,7 +1,7 @@
 # ML-GRADLE Hands-On Exercises 
 ## Episode 2 - Scaffolding New Projects with ml-gradle
 
-Episode 2 is part of the [**ml-gradle** series] (http://mlu.marklogic.com/ondemand/index.xqy?q=Series%3A%22ml-gradle%22). Visit [MarkLogic University On Demand] (http://mlu.marklogic.com/ondemand) for a variety of video topics.
+Episode 2 is part of the [**ml-gradle** series](http://mlu.marklogic.com/ondemand/index.xqy?q=Series%3A%22ml-gradle%22). Visit [MarkLogic University On Demand](http://mlu.marklogic.com/ondemand) for a variety of video topics.
 
 This episode investigates creating initial project configuration files to deploy to a MarkLogic server. 
 

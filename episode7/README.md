@@ -3,7 +3,7 @@
 
 ## Episode 7 - Protecting Passwords
 
-Episode 7 is part of the [**ml-gradle** series] (http://mlu.marklogic.com/ondemand/index.xqy?q=Series%3A%22ml-gradle%22). Visit [MarkLogic University On Demand] (http://mlu.marklogic.com/ondemand) for a variety of video topics.
+Episode 7 is part of the [**ml-gradle** series](http://mlu.marklogic.com/ondemand/index.xqy?q=Series%3A%22ml-gradle%22). Visit [MarkLogic University On Demand](http://mlu.marklogic.com/ondemand) for a variety of video topics.
 
 We continue our existing Gradle build to explore an approach to protecting passwords used in **ml-gradle** deployments. In this episode, we will use the **Credentials** Gradle plugin to store encrypted password values on the local computer. We will, then, retrieve the values to use when deploying our application code, configurations and content.
 

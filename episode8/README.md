@@ -3,7 +3,7 @@
 
 ## Episode 8 - Adding MarkLogic Hosts to Clusters
 
-Episode 8 is part of the [**ml-gradle** series] (http://mlu.marklogic.com/ondemand/index.xqy?q=Series%3A%22ml-gradle%22). Visit [MarkLogic University On Demand] (http://mlu.marklogic.com/ondemand) for a variety of video topics.
+Episode 8 is part of the [**ml-gradle** series](http://mlu.marklogic.com/ondemand/index.xqy?q=Series%3A%22ml-gradle%22). Visit [MarkLogic University On Demand](http://mlu.marklogic.com/ondemand) for a variety of video topics.
 
 This episode investigates deploying MarkLogic hosts and adding them to an existing cluster. We will explore enhancing our existing Gradle build from **episode 7** to create multiple Docker containers, each being a MarkLogic server. Then, we will use **ml-gradle** to add these multiple MarkLogic hosts to a cluster. Finally, we will deploy our example application.
 

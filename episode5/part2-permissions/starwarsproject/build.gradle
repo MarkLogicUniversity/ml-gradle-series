@@ -1,11 +1,11 @@
 plugins {
   id "net.saliman.properties" version "1.4.6"
-  id "com.marklogic.ml-gradle" version "3.7.1"
+  id "com.marklogic.ml-gradle" version "3.9.0"
 }
 
 repositories {
   jcenter()
-  maven { url "https://developer.marklogic.com/maven2/" }
+  maven { url "http://developer.marklogic.com/maven2/" }
 }
 
 configurations {

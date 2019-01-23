@@ -49,6 +49,9 @@ To successfully do the hands-on portions for this episode, make sure you have th
 * Docker, version 8.03-ce or higher, installed and working. <https://www.docker.com/get-started>
 * Java, Version 1.8 or greater. <https://java.com/en/download/>
 * Gradle, Version 3.5 or greater. <https://gradle.org/install/>
+
+	> Note: Currently, **ml-gradle** supports Gradle versions up to 4.10.x. Gradle versions 5 and higher are currently unsupported. You can have multiple versions of Gradle on your computer. Just make sure the 4.x version is called for **ml-gradle** tasks.
+
 * An internet connection to pull dependencies from Gradle repositories.
 
 ## Episode 8 Hands-On Instructions

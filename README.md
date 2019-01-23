@@ -21,6 +21,8 @@ Visit <https://github.com/marklogic-community/ml-gradle> and don't forget to vis
 
 The **ml-gradle** video tutorials are separated into episodes. Here is an overview.
 
+> Note: Currently, **ml-gradle** supports Gradle versions up to 4.10.x. Gradle versions 5 and higher are currently unsupported. You can have multiple versions of Gradle on your computer. Just make sure the 4.x version is called for **ml-gradle** tasks.
+
 * **Episode 1 - Introduction to ml-gradle.**  
 	Introduces you to the **ml-gradle** plug-in. There are no hands-on activities for this episode.
 	
